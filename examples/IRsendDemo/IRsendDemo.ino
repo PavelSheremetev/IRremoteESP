@@ -32,7 +32,7 @@
 #include <IRremoteESP8266.h>
 #include <IRsend.h>
 
-const uint16_t kIrLed = 13;  // ESP8266 GPIO pin to use. Recommended: 4 (D2).
+const uint16_t kIrLed = 4;  // ESP8266 GPIO pin to use. Recommended: 4 (D2).
 
 IRsend irsend(kIrLed);  // Set the GPIO to be used to sending the message.
 
@@ -55,7 +55,7 @@ void setup() {
 #if ESP8266
   Serial.begin(115200, SERIAL_8N1, SERIAL_TX_ONLY);
 #else  // ESP8266
-  Serial.begin(115200, SERIAL_8N1);
+  Serial.begin(115200);
 #endif  // ESP8266
 }
 
@@ -65,13 +65,13 @@ void loop() {
   delay(2000);
   Serial.println("Sony");
   irsend.sendSony(0xa90, 12, 2);  // 12 bits & 2 repeats
-  delay(2000);
+  delay(2000); */
   Serial.println("a rawData capture from IRrecvDumpV2");
   irsend.sendRaw(rawData, 67, 38);  // Send a raw data capture at 38kHz.
   delay(2000);
   Serial.println("a Samsung A/C state from IRrecvDumpV2");
   irsend.sendSamsungAC(samsungState);
-  delay(2000);*/
+  delay(2000);
   Serial.println("a Samsung");
   //irsend.sendRaw(rawSamsung,135,38);
   //irsend.sendSAMSUNG(0xE0E020DF);
