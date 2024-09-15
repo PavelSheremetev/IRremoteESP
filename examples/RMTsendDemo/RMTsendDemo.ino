@@ -54,7 +54,7 @@ void setup() {
   irsend.begin();
 #if ESP8266
   Serial.begin(115200, SERIAL_8N1, SERIAL_TX_ONLY);
-#elif ARDUINO_ESP32C3_DEV
+#elif ESP32
   Serial.begin(115200);
 #else  // ESP8266
   Serial.begin(115200, SERIAL_8N1);
