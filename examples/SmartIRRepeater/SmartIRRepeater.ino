@@ -64,7 +64,7 @@
 #ifdef ARDUINO_ESP32C3_DEV
 const uint16_t kRecvPin = 3; //10;  // 14 on a ESP32-C3 causes a boot loop.
 #else  // ARDUINO_ESP32C3_DEV
-const uint16_t kRecvPin = 14;
+const uint16_t kRecvPin = 5;
 #endif  // ARDUINO_ESP32C3_DEV
 
 // GPIO to use to control the IR LED circuit. Recommended: 4 (D2).
